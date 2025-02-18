@@ -1,0 +1,31 @@
+@mixin fondo-portada{
+    background: linear-gradient(
+    -45deg,
+    rgb(0,0,0),
+    rgb(20,20,20),
+    rgb(40,40,40),
+    rgb(60,60,60),
+    rgb(40,60,40),
+    rgb(60,40,60)
+  );
+  background-size: 400% 400%;
+  animation: gradient 30s ease infinite;
+}
+
+@keyframes gradient {
+    0% {
+      background-position: 0% 50%;
+    }
+    25% {
+      background-position: 50% 100%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    75% {
+      background-position: 50% 0%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
