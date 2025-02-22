@@ -1,11 +1,16 @@
 <script setup>
 import { ref,onMounted } from 'vue';
-
+import BioComponent from './BioComponent.vue';
  
 let screenX = window.screen.width;
 let movil = screenX <= 500;
 let activeMenu = ref(false);
 let interval = undefined;
+let bioC = ref(true);
+let formC = ref(false);
+let espC = ref(false);
+let proyC = ref(false);
+let conC = ref(false);
 const checkScreen = ()=>{
     screenX = window.screen.width;
     movil = screenX <= 500;
@@ -63,6 +68,7 @@ onMounted(()=>{
             <div id="c-pry"><h3>Proyectos</h3></div>
             <div id="c-red"><h3>Contacto</h3></div>
         </nav>
+        <BioComponent/>
     </main>
     <footer>
 
@@ -96,11 +102,8 @@ header{
             }
             h2{
                 font-size: 2.5vw;
-                color: transparent;
-                background-image: linear-gradient(45deg, #ff0000, #ff7300, #ffeb00, #47ff00, #339353, #4d6be2, #8a00ff, #ff5050);
-                background-size: 300% 300%;
-                background-clip: text;
-                animation: animación-texto-portada 6s infinite linear;
+                @include mixings.texto-animado;
+                animation: animación-texto 6s infinite linear;
             }
             img{
                 width: 20%;
@@ -116,6 +119,7 @@ header{
     background-color: rgb(44, 42, 44);
     display: flex;
     text-align: center;
+    color: rgb(231, 210, 210);
     & div{
         margin: 0% auto;
         border-left-style: solid;
@@ -129,9 +133,12 @@ header{
         }
     }
     #c-bio{
-        background-color: gray;
-        color: black;
         padding: 0% 2.1%;
+        border-color: gray;
+        h3{
+            @include mixings.texto-animado(#ff7300, #ff8c00, #ffa500, #ffb732, #ffcc00, #ffd700, #a0f136, #acee43);
+            animation: animación-texto 6s infinite linear;
+        }
     }
 }
 @media screen and (max-width:500px){
@@ -175,6 +182,7 @@ header{
         position: fixed;
         top: 0%;
         text-align: left;
+        z-index: 10;
         .barra-menu{
             position: absolute;
             width: 8%;
@@ -221,6 +229,10 @@ header{
             margin-top: 10%;
             width: fit-content;
             font-size: 5vw;
+        }
+        #c-bio{
+            @include mixings.texto-animado(#d667f5, #924dd2, #e050d2, #c93598, #6a1f63, #5a2578, #8a00ff, darkviolet);
+            animation: animación-texto 6s infinite linear;
         }
     }
 } 
