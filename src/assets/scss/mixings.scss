@@ -1,31 +1,16 @@
-@mixin fondo-portada{
-    background: linear-gradient(
-    -45deg,
-    rgb(0,0,0),
-    rgb(20,20,20),
-    rgb(40,40,40),
-    rgb(60,60,60),
-    rgb(40,60,40),
-    rgb(60,40,60)
-  );
-  background-size: 400% 400%;
-  animation: gradient 30s ease infinite;
-}
 
-@keyframes gradient {
-    0% {
-      background-position: 0% 50%;
-    }
-    25% {
-      background-position: 50% 100%;
-    }
-    50% {
-      background-position: 100% 50%;
-    }
-    75% {
-      background-position: 50% 0%;
-    }
-    100% {
-      background-position: 0% 50%;
-    }
-  }
+@mixin texto-animado(
+  $color1: #ff0000,
+  $color2: #ff7300,
+  $color3: #ffeb00,
+  $color4: #47ff00,
+  $color5: #339353,
+  $color6: #4d6be2,
+  $color7: #8a00ff,
+  $color8: #ff5050
+) {
+  color: transparent;
+  background-image: linear-gradient(45deg, $color1, $color2, $color3, $color4, $color5, $color6, $color7, $color8);
+  background-size: 300% 300%;
+  background-clip: text;
+}
