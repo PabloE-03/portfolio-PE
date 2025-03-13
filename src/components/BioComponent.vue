@@ -72,8 +72,8 @@ details{
         font-size: 1.5vw;
         margin-left: 3%;
     }
-    b:nth-child(3){
-        @include mixings.texto-animado(#42b883, #35495e, #41b883, #34495e, #42b983, #35485e, #41b783, #34485e);
+    b:nth-child(1){
+        @include mixings.texto-animado(#ff4545, #d80e00, #c26700, #f89820, #f89820, #5382a1, #007396, #3c99dc);
         animation: animación-texto 6s infinite linear;
     }
     b:nth-child(2){
