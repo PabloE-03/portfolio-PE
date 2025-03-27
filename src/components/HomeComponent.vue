@@ -1,16 +1,16 @@
 <script setup>
 import { ref,onMounted } from 'vue';
 import BioComponent from './BioComponent.vue';
- 
+import FormComponent from './FormComponent.vue';
 let screenX = window.screen.width;
 let movil = screenX <= 500;
 let activeMenu = ref(false);
 let interval = undefined;
-let bioC = ref(true);
-let formC = ref(false);
-let espC = ref(false);
-let proyC = ref(false);
-let conC = ref(false);
+const bioC = ref(true);
+const formC = ref(false);
+const espC = ref(false);
+const proyC = ref(false);
+const conC = ref(false);
 const checkScreen = ()=>{
     screenX = window.screen.width;
     movil = screenX <= 500;
@@ -29,6 +29,145 @@ const activarMenu = () => {
     {
         menu.style.left = "-60%";
         portada.style.opacity = "1";
+    }
+}
+
+
+const cambioNav = (content)=>{
+    const c_bio = document.getElementById("c-bio");
+    const c_for = document.getElementById("c-for");
+    const c_esp = document.getElementById("c-esp");
+    const c_pry = document.getElementById("c-pry");
+    const c_red = document.getElementById("c-red");
+    let background_image = "linear-gradient(45deg, #ff0000, #ff7300, #ffeb00, #47ff00, #339353, #4d6be2, #8a00ff, #ff5050)";
+    let background_size = "300% 300%";
+    let background_clip = "text";
+    switch (content)
+    {
+        case "bio":
+            bioC.value = true;
+            formC.value = false;
+            espC.value = false;
+            proyC.value = false;
+            conC.value = false;
+            c_bio.style.borderColor = "gray";
+            c_bio.style.color = "transparent";
+            c_bio.style.backgroundImage = background_image;
+            c_bio.style.backgroundSize = background_size;
+            c_bio.style.backgroundClip = background_clip;
+            c_bio.style.padding = "0% 2.1%";
+            c_for.style.borderColor = "transparent";
+            c_esp.style.borderColor = "transparent";
+            c_pry.style.borderColor = "transparent";
+            c_red.style.borderColor = "transparent";
+            c_for.style.padding = "0% 0%";
+            c_esp.style.padding = "0% 0%";
+            c_pry.style.padding = "0% 0%";
+            c_red.style.padding = "0% 0%";
+            c_for.style.color = "rgb(231, 210, 210)";
+            c_esp.style.color = "rgb(231, 210, 210)";
+            c_pry.style.color = "rgb(231, 210, 210)";
+            c_red.style.color = "rgb(231, 210, 210)";
+            break;
+        case "for":
+            bioC.value = false;
+            formC.value = true;
+            espC.value = false;
+            proyC.value = false;
+            conC.value = false;
+            c_for.style.borderColor = "gray";
+            c_for.style.padding = "0% 2.1%";
+            c_for.style.color = "transparent";
+            c_for.style.backgroundImage = background_image;
+            c_for.style.backgroundSize = background_size;
+            c_for.style.backgroundClip = background_clip;
+            c_bio.style.borderColor = "transparent";
+            c_esp.style.borderColor = "transparent";
+            c_pry.style.borderColor = "transparent";
+            c_red.style.borderColor = "transparent";
+            c_bio.style.padding = "0% 0%";
+            c_esp.style.padding = "0% 0%";
+            c_pry.style.padding = "0% 0%";
+            c_red.style.padding = "0% 0%";
+            c_bio.style.color = "rgb(231, 210, 210)";
+            c_esp.style.color = "rgb(231, 210, 210)";
+            c_pry.style.color = "rgb(231, 210, 210)";
+            c_red.style.color = "rgb(231, 210, 210)";
+            break;
+        case "esp":
+            bioC.value = false;
+            formC.value = false;
+            espC.value = true;
+            proyC.value = false;
+            conC.value = false;
+            c_esp.style.borderColor = "gray";
+            c_esp.style.padding = "0% 2.1%";
+            c_esp.style.color = "transparent";
+            c_esp.style.backgroundImage = background_image;
+            c_esp.style.backgroundSize = background_size;
+            c_esp.style.backgroundClip = background_clip;
+            c_bio.style.borderColor = "transparent";
+            c_for.style.borderColor = "transparent";
+            c_pry.style.borderColor = "transparent";
+            c_red.style.borderColor = "transparent";
+            c_bio.style.padding = "0% 0%";
+            c_for.style.padding = "0% 0%";
+            c_pry.style.padding = "0% 0%";
+            c_red.style.padding = "0% 0%";
+            c_bio.style.color = "rgb(231, 210, 210)";
+            c_for.style.color = "rgb(231, 210, 210)";
+            c_pry.style.color = "rgb(231, 210, 210)";
+            c_red.style.color = "rgb(231, 210, 210)";
+            break;
+        case "pry":
+            bioC.value = false;
+            formC.value = false;
+            espC.value = false;
+            proyC.value = true;
+            conC.value = false;
+            c_pry.style.borderColor = "gray";
+            c_pry.style.padding = "0% 2.1%";
+            c_pry.style.color = "transparent";
+            c_pry.style.backgroundImage = background_image;
+            c_pry.style.backgroundSize = background_size;
+            c_pry.style.backgroundClip = background_clip;
+            c_bio.style.borderColor = "transparent";
+            c_for.style.borderColor = "transparent";
+            c_esp.style.borderColor = "transparent";
+            c_red.style.borderColor = "transparent";
+            c_bio.style.padding = "0% 0%";
+            c_for.style.padding = "0% 0%";
+            c_esp.style.padding = "0% 0%";
+            c_red.style.padding = "0% 0%";
+            c_bio.style.color = "rgb(231, 210, 210)";
+            c_for.style.color = "rgb(231, 210, 210)";
+            c_esp.style.color = "rgb(231, 210, 210)";
+            c_red.style.color = "rgb(231, 210, 210)";
+            break;
+        case "red":
+            bioC.value = false;
+            formC.value = false;
+            espC.value = false;
+            proyC.value = false;
+            conC.value = true;
+            c_red.style.borderColor = "gray";
+            c_red.style.padding = "0% 2.1%";
+            c_red.style.color = "transparent";
+            c_red.style.backgroundImage = background_image;
+            c_red.style.backgroundSize = background_size;
+            c_red.style.backgroundClip = background_clip;
+            c_bio.style.borderColor = "transparent";
+            c_for.style.borderColor = "transparent";
+            c_esp.style.borderColor = "transparent";
+            c_pry.style.borderColor = "transparent";
+            c_bio.style.padding = "0% 0%";
+            c_for.style.padding = "0% 0%";
+            c_esp.style.padding = "0% 0%";
+            c_pry.style.padding = "0% 0%";
+            c_bio.style.color = "rgb(231, 210, 210)";
+            c_for.style.color = "rgb(231, 210, 210)";
+            c_esp.style.color = "rgb(231, 210, 210)";
+            c_pry.style.color = "rgb(231, 210, 210)";  
     }
 }
 
@@ -54,21 +193,22 @@ onMounted(()=>{
         </div>
     </header>
     <aside id="menu-content">
-        <div id="c-bio"><h3>Biografía</h3></div>
-        <div id="c-for"><h3>Formación</h3></div>
-        <div id="c-esp"><h3>Especialidades</h3></div>
-        <div id="c-pry"><h3>Proyectos</h3></div>
-        <div id="c-red"><h3>Contacto</h3></div>
+        <div id="c-bio-m" v-on:click="cambioNav('bio')"><h3>Biografía</h3></div>
+        <div id="c-for-m" v-on:click="cambioNav('for')"><h3>Formación</h3></div>
+        <div id="c-esp-m"><h3>Especialidades</h3></div>
+        <div id="c-pry-m"><h3>Proyectos</h3></div>
+        <div id="c-red-m"><h3>Contacto</h3></div>
     </aside>
     <main>
         <nav class="contenido">
-            <div id="c-bio"><h3>Biografía</h3></div>
-            <div id="c-for"><h3>Formación</h3></div>
-            <div id="c-esp"><h3>Especialidades</h3></div>
-            <div id="c-pry"><h3>Proyectos</h3></div>
-            <div id="c-red"><h3>Contacto</h3></div>
+            <div id="c-bio" v-on:click="cambioNav('bio')"><h3>Biografía</h3></div>
+            <div id="c-for" v-on:click="cambioNav('for')"><h3>Formación</h3></div>
+            <div id="c-esp" v-on:click="cambioNav('esp')"><h3>Especialidades</h3></div>
+            <div id="c-pry" v-on:click="cambioNav('pry')"><h3>Proyectos</h3></div>
+            <div id="c-red" v-on:click="cambioNav('red')"><h3>Contacto</h3></div>
         </nav>
-        <BioComponent/>
+        <BioComponent v-if="bioC" />
+        <FormComponent v-if="formC" />
     </main>
     <footer>
 
@@ -127,18 +267,14 @@ header{
         border-color: transparent;
         transition: 1s;
         &:hover{
-            padding: 0% 2.1%;
-            border-color: gray;
             cursor: pointer;
         }
     }
     #c-bio{
         padding: 0% 2.1%;
         border-color: gray;
-        h3{
-            @include mixings.texto-animado(#ff7300, #ff8c00, #ffa500, #ffb732, #ffcc00, #ffd700, #a0f136, #acee43);
-            animation: animación-texto 6s infinite linear;
-        }
+        @include mixings.texto-animado(#ff7300, #ff8c00, #ffa500, #ffb732, #ffcc00, #ffd700, #a0f136, #acee43);
+        animation: animación-texto 6s infinite linear;
     }
 }
 @media screen and (max-width:500px){
@@ -230,7 +366,7 @@ header{
             width: fit-content;
             font-size: 5vw;
         }
-        #c-bio{
+        #c-bio-m{
             @include mixings.texto-animado(#d667f5, #924dd2, #e050d2, #c93598, #6a1f63, #5a2578, #8a00ff, darkviolet);
             animation: animación-texto 6s infinite linear;
         }
