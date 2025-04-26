@@ -171,6 +171,146 @@ const cambioNav = (content)=>{
     }
 }
 
+const cambioNavMovil = (content)=>{
+    const c_bio = document.getElementById("c-bio-m");
+    const c_for = document.getElementById("c-for-m");
+    const c_esp = document.getElementById("c-esp-m");
+    const c_pry = document.getElementById("c-pry-m");
+    const c_red = document.getElementById("c-red-m");
+    let background_image = "linear-gradient(45deg, #d667f5, #924dd2, #e050d2, #c93598, #6a1f63, #5a2578, #8a00ff, darkviolet)";
+    let background_size = "300% 300%";
+    let background_clip = "text";
+    switch (content)
+    {
+        case "bio":
+            bioC.value = true;
+            formC.value = false;
+            espC.value = false;
+            proyC.value = false;
+            conC.value = false;
+            c_bio.style.borderColor = "gray";
+            c_bio.style.color = "transparent";
+            c_bio.style.backgroundImage = background_image;
+            c_bio.style.backgroundSize = background_size;
+            c_bio.style.backgroundClip = background_clip;
+            c_bio.style.padding = "0% 2.1%";
+            c_for.style.borderColor = "transparent";
+            c_esp.style.borderColor = "transparent";
+            c_pry.style.borderColor = "transparent";
+            c_red.style.borderColor = "transparent";
+            c_for.style.padding = "0% 0%";
+            c_esp.style.padding = "0% 0%";
+            c_pry.style.padding = "0% 0%";
+            c_red.style.padding = "0% 0%";
+            c_for.style.color = "rgb(231, 210, 210)";
+            c_esp.style.color = "rgb(231, 210, 210)";
+            c_pry.style.color = "rgb(231, 210, 210)";
+            c_red.style.color = "rgb(231, 210, 210)";
+            break;
+        case "for":
+            bioC.value = false;
+            formC.value = true;
+            espC.value = false;
+            proyC.value = false;
+            conC.value = false;
+            c_for.style.borderColor = "gray";
+            c_for.style.padding = "0% 2.1%";
+            c_for.style.color = "transparent";
+            c_for.style.backgroundImage = background_image;
+            c_for.style.backgroundSize = background_size;
+            c_for.style.backgroundClip = background_clip;
+            c_bio.style.borderColor = "transparent";
+            c_esp.style.borderColor = "transparent";
+            c_pry.style.borderColor = "transparent";
+            c_red.style.borderColor = "transparent";
+            c_bio.style.padding = "0% 0%";
+            c_esp.style.padding = "0% 0%";
+            c_pry.style.padding = "0% 0%";
+            c_red.style.padding = "0% 0%";
+            c_bio.style.color = "rgb(231, 210, 210)";
+            c_esp.style.color = "rgb(231, 210, 210)";
+            c_pry.style.color = "rgb(231, 210, 210)";
+            c_red.style.color = "rgb(231, 210, 210)";
+            break;
+        case "esp":
+            bioC.value = false;
+            formC.value = false;
+            espC.value = true;
+            proyC.value = false;
+            conC.value = false;
+            c_esp.style.borderColor = "gray";
+            c_esp.style.padding = "0% 2.1%";
+            c_esp.style.color = "transparent";
+            c_esp.style.backgroundImage = background_image;
+            c_esp.style.backgroundSize = background_size;
+            c_esp.style.backgroundClip = background_clip;
+            c_bio.style.borderColor = "transparent";
+            c_for.style.borderColor = "transparent";
+            c_pry.style.borderColor = "transparent";
+            c_red.style.borderColor = "transparent";
+            c_bio.style.padding = "0% 0%";
+            c_for.style.padding = "0% 0%";
+            c_pry.style.padding = "0% 0%";
+            c_red.style.padding = "0% 0%";
+            c_bio.style.color = "rgb(231, 210, 210)";
+            c_for.style.color = "rgb(231, 210, 210)";
+            c_pry.style.color = "rgb(231, 210, 210)";
+            c_red.style.color = "rgb(231, 210, 210)";
+            break;
+        case "pry":
+            bioC.value = false;
+            formC.value = false;
+            espC.value = false;
+            proyC.value = true;
+            conC.value = false;
+            c_pry.style.borderColor = "gray";
+            c_pry.style.padding = "0% 2.1%";
+            c_pry.style.color = "transparent";
+            c_pry.style.backgroundImage = background_image;
+            c_pry.style.backgroundSize = background_size;
+            c_pry.style.backgroundClip = background_clip;
+            c_bio.style.borderColor = "transparent";
+            c_for.style.borderColor = "transparent";
+            c_esp.style.borderColor = "transparent";
+            c_red.style.borderColor = "transparent";
+            c_bio.style.padding = "0% 0%";
+            c_for.style.padding = "0% 0%";
+            c_esp.style.padding = "0% 0%";
+            c_red.style.padding = "0% 0%";
+            c_bio.style.color = "rgb(231, 210, 210)";
+            c_for.style.color = "rgb(231, 210, 210)";
+            c_esp.style.color = "rgb(231, 210, 210)";
+            c_red.style.color = "rgb(231, 210, 210)";
+            break;
+        case "red":
+            bioC.value = false;
+            formC.value = false;
+            espC.value = false;
+            proyC.value = false;
+            conC.value = true;
+            c_red.style.borderColor = "gray";
+            c_red.style.padding = "0% 2.1%";
+            c_red.style.color = "transparent";
+            c_red.style.backgroundImage = background_image;
+            c_red.style.backgroundSize = background_size;
+            c_red.style.backgroundClip = background_clip;
+            c_bio.style.borderColor = "transparent";
+            c_for.style.borderColor = "transparent";
+            c_esp.style.borderColor = "transparent";
+            c_pry.style.borderColor = "transparent";
+            c_bio.style.padding = "0% 0%";
+            c_for.style.padding = "0% 0%";
+            c_esp.style.padding = "0% 0%";
+            c_pry.style.padding = "0% 0%";
+            c_bio.style.color = "rgb(231, 210, 210)";
+            c_for.style.color = "rgb(231, 210, 210)";
+            c_esp.style.color = "rgb(231, 210, 210)";
+            c_pry.style.color = "rgb(231, 210, 210)";  
+    }
+    activarMenu()
+    document.getElementById("check-menu").checked = false;
+}
+
 
 onMounted(()=>{
     interval = setInterval(checkScreen(),50);
@@ -193,11 +333,11 @@ onMounted(()=>{
         </div>
     </header>
     <aside id="menu-content">
-        <div id="c-bio-m" v-on:click="cambioNav('bio')"><h3>Biografía</h3></div>
-        <div id="c-for-m" v-on:click="cambioNav('for')"><h3>Formación</h3></div>
-        <div id="c-esp-m"><h3>Especialidades</h3></div>
-        <div id="c-pry-m"><h3>Proyectos</h3></div>
-        <div id="c-red-m"><h3>Contacto</h3></div>
+        <div id="c-bio-m" v-on:click="cambioNavMovil('bio')"><h3>Biografía</h3></div>
+        <div id="c-for-m" v-on:click="cambioNavMovil('for')"><h3>Formación</h3></div>
+        <div id="c-esp-m" v-on:click="cambioNavMovil('esp')"><h3>Especialidades</h3></div>
+        <div id="c-pry-m" v-on:click="cambioNavMovil('pry')"><h3>Proyectos</h3></div>
+        <div id="c-red-m" v-on:click="cambioNavMovil('red')"><h3>Contacto</h3></div>
     </aside>
     <main>
         <nav class="contenido">
@@ -280,6 +420,7 @@ header{
 @media screen and (max-width:500px){
     aside{
         display: block;
+        z-index: 10;
     }
     #check-menu{
         display: inline-block;
