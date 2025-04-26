@@ -84,3 +84,18 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+h1{
+  font-size: 4vw;
+  width: 100%;
+  margin: 0% auto;
+  text-align: center;
+}
+
+@media screen and (max-width: 500px){
+  h1{
+      width: fit-content;
+      font-size: 9vw;
+      margin: 0% auto; 
+  }
+}

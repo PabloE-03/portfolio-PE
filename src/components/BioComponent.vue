@@ -44,13 +44,6 @@ details,h1{
     color: rgb(165, 164, 164);
 }
 
-h1{
-    font-size: 4vw;
-    width: 100%;
-    margin: 0% auto;
-    text-align: center;
-}
-
 summary{
     width: fit-content;
     transition: 0.5s ease;
@@ -145,11 +138,6 @@ ul{
 }
 
 @media screen and (max-width: 500px){
-    h1{
-        width: fit-content;
-        font-size: 9vw;
-        margin: 0% auto; 
-    }
     .content{
         width: fit-content;
         text-align: justify;
